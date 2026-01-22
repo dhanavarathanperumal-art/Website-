@@ -34,7 +34,7 @@
             width: 100%;
             height: 100%;
             background-image: 
-                linear-gradient(rgba(0, 150, 255, 0.05) 1px, transparent 1px),
+                linear-gradient(rgba(255, 50, 50, 0.05) 1px, transparent 1px),
                 linear-gradient(90deg, rgba(0, 150, 255, 0.05) 1px, transparent 1px);
             background-size: 50px 50px;
             z-index: -1;
@@ -57,7 +57,7 @@
         .orb-1 {
             width: 300px;
             height: 300px;
-            background: radial-gradient(circle, rgba(0, 100, 255, 0.7), transparent 70%);
+            background: radial-gradient(circle, rgba(255, 50, 50, 0.5), transparent 70%);
             top: 10%;
             left: 5%;
             animation: float 25s infinite ease-in-out;
@@ -70,6 +70,15 @@
             bottom: 10%;
             right: 5%;
             animation: float 30s infinite ease-in-out reverse;
+        }
+        
+        .orb-3 {
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, rgba(0, 100, 255, 0.4), transparent 70%);
+            top: 70%;
+            left: 80%;
+            animation: float 20s infinite ease-in-out;
         }
         
         @keyframes float {
@@ -96,12 +105,13 @@
         .cyber-border {
             position: relative;
             padding: 30px;
-            border: 1px solid rgba(0, 150, 255, 0.3);
+            border: 1px solid rgba(255, 50, 50, 0.4);
             border-radius: 10px;
             background: rgba(10, 15, 30, 0.7);
             backdrop-filter: blur(10px);
             box-shadow: 
-                0 0 20px rgba(0, 100, 255, 0.2),
+                0 0 20px rgba(255, 50, 50, 0.3),
+                0 0 40px rgba(0, 100, 255, 0.2),
                 inset 0 0 20px rgba(0, 100, 255, 0.1);
         }
         
@@ -115,25 +125,25 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            border: 2px solid #00a2ff;
+            border: 2px solid #ff3232;
             box-shadow: 
-                0 0 25px rgba(0, 162, 255, 0.5),
-                inset 0 0 25px rgba(0, 100, 255, 0.2);
+                0 0 25px rgba(255, 50, 50, 0.6),
+                inset 0 0 25px rgba(255, 0, 0, 0.3);
         }
         
         .avatar i {
             font-size: 3.5rem;
-            color: #00e0ff;
-            text-shadow: 0 0 10px rgba(0, 224, 255, 0.7);
+            color: #ff3232;
+            text-shadow: 0 0 15px rgba(255, 50, 50, 0.8);
         }
         
         h1 {
             font-size: 3rem;
             margin-bottom: 10px;
-            background: linear-gradient(90deg, #00a2ff, #00e0ff);
+            background: linear-gradient(90deg, #ff3232, #00a2ff);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            text-shadow: 0 0 15px rgba(0, 162, 255, 0.5);
+            text-shadow: 0 0 15px rgba(255, 50, 50, 0.5);
             letter-spacing: 1px;
         }
         
@@ -171,9 +181,9 @@
         }
         
         .social-icon:hover {
-            background: rgba(0, 100, 200, 0.7);
+            background: rgba(255, 50, 50, 0.7);
             transform: translateY(-5px);
-            box-shadow: 0 0 20px rgba(0, 162, 255, 0.7);
+            box-shadow: 0 0 20px rgba(255, 50, 50, 0.7);
             color: white;
         }
         
@@ -194,7 +204,7 @@
             background: rgba(15, 20, 40, 0.7);
             border-radius: 10px;
             padding: 30px;
-            border: 1px solid rgba(0, 100, 200, 0.2);
+            border: 1px solid rgba(255, 50, 50, 0.2);
             backdrop-filter: blur(10px);
             box-shadow: 
                 0 10px 30px rgba(0, 0, 0, 0.3),
@@ -211,22 +221,22 @@
             left: 0;
             width: 5px;
             height: 100%;
-            background: linear-gradient(to bottom, #00a2ff, #00e0ff);
+            background: linear-gradient(to bottom, #ff3232, #00a2ff);
         }
         
         .card:hover {
             transform: translateY(-10px);
             box-shadow: 
                 0 15px 35px rgba(0, 0, 0, 0.5),
-                0 0 30px rgba(0, 100, 255, 0.2),
+                0 0 30px rgba(255, 50, 50, 0.2),
                 inset 0 1px 0 rgba(255, 255, 255, 0.1);
         }
         
         .card h2 {
-            color: #00e0ff;
+            color: #ff3232;
             margin-bottom: 25px;
             padding-bottom: 15px;
-            border-bottom: 1px solid rgba(0, 162, 255, 0.3);
+            border-bottom: 1px solid rgba(255, 50, 50, 0.3);
             font-size: 1.8rem;
             display: flex;
             align-items: center;
@@ -244,6 +254,12 @@
         }
         
         .highlight {
+            color: #ff3232;
+            font-weight: 700;
+            text-shadow: 0 0 8px rgba(255, 50, 50, 0.5);
+        }
+        
+        .highlight-blue {
             color: #00e0ff;
             font-weight: 600;
         }
@@ -257,26 +273,38 @@
         
         .info-item i {
             width: 30px;
-            color: #00a2ff;
+            color: #ff3232;
             font-size: 1.2rem;
         }
         
         .tech-tag {
             display: inline-block;
-            background: rgba(0, 100, 200, 0.2);
-            color: #00e0ff;
+            background: rgba(255, 50, 50, 0.15);
+            color: #ff9999;
             padding: 8px 15px;
             border-radius: 20px;
             font-size: 0.9rem;
             margin-right: 10px;
             margin-bottom: 10px;
-            border: 1px solid rgba(0, 162, 255, 0.3);
+            border: 1px solid rgba(255, 50, 50, 0.3);
             transition: all 0.3s ease;
         }
         
+        .tech-tag-blue {
+            background: rgba(0, 100, 200, 0.15);
+            color: #00e0ff;
+            border: 1px solid rgba(0, 162, 255, 0.3);
+        }
+        
         .tech-tag:hover {
-            background: rgba(0, 100, 200, 0.4);
+            background: rgba(255, 50, 50, 0.4);
             transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(255, 50, 50, 0.4);
+            color: white;
+        }
+        
+        .tech-tag-blue:hover {
+            background: rgba(0, 100, 200, 0.4);
             box-shadow: 0 5px 15px rgba(0, 100, 200, 0.3);
         }
         
@@ -291,20 +319,22 @@
             padding: 20px;
             background: rgba(10, 20, 40, 0.5);
             border-radius: 8px;
-            border-left: 3px solid #00a2ff;
+            border-left: 3px solid #ff3232;
             transition: all 0.3s ease;
         }
         
         .project-item:hover {
             background: rgba(20, 40, 80, 0.5);
             transform: translateX(5px);
+            border-left: 3px solid #00a2ff;
         }
         
         .project-title {
-            font-weight: 600;
-            color: #00e0ff;
+            font-weight: 700;
+            color: #ff3232;
             margin-bottom: 10px;
             font-size: 1.3rem;
+            text-shadow: 0 0 5px rgba(255, 50, 50, 0.5);
         }
         
         .project-desc {
@@ -321,14 +351,14 @@
             padding: 20px;
             background: rgba(10, 20, 40, 0.5);
             border-radius: 10px;
-            border: 1px solid rgba(0, 100, 200, 0.2);
+            border: 1px solid rgba(255, 50, 50, 0.2);
         }
         
         .stat-number {
             font-size: 2.5rem;
             font-weight: 700;
-            color: #00e0ff;
-            text-shadow: 0 0 10px rgba(0, 224, 255, 0.5);
+            color: #ff3232;
+            text-shadow: 0 0 10px rgba(255, 50, 50, 0.6);
             margin-bottom: 5px;
         }
         
@@ -347,7 +377,7 @@
             border-radius: 10px;
             padding: 30px;
             margin-top: 20px;
-            border: 1px solid rgba(0, 162, 255, 0.3);
+            border: 1px solid rgba(255, 50, 50, 0.3);
             position: relative;
             overflow: hidden;
         }
@@ -357,7 +387,7 @@
             position: absolute;
             top: -12px;
             left: 20px;
-            background: linear-gradient(90deg, #00a2ff, #00e0ff);
+            background: linear-gradient(90deg, #ff3232, #00a2ff);
             color: #0a0a14;
             padding: 5px 15px;
             border-radius: 20px;
@@ -372,20 +402,22 @@
             padding: 20px;
             border-radius: 8px;
             margin-bottom: 20px;
-            border-left: 3px solid #00e0ff;
+            border-left: 3px solid #ff3232;
             transition: all 0.3s ease;
         }
         
         .note-item:hover {
             background: rgba(30, 50, 90, 0.6);
             transform: translateX(5px);
+            border-left: 3px solid #00e0ff;
         }
         
         .note-title {
-            font-weight: 600;
-            color: #00e0ff;
+            font-weight: 700;
+            color: #ff3232;
             margin-bottom: 10px;
             font-size: 1.2rem;
+            text-shadow: 0 0 5px rgba(255, 50, 50, 0.5);
         }
         
         .note-content {
@@ -393,17 +425,21 @@
             margin-bottom: 10px;
         }
         
+        .note-content strong {
+            color: #ff6666;
+        }
+        
         .note-date {
             font-size: 0.85rem;
-            color: #88aaff;
+            color: #ff9999;
             display: flex;
             align-items: center;
             gap: 5px;
         }
         
         .edit-notice {
-            background: rgba(0, 50, 100, 0.3);
-            border: 1px dashed #00a2ff;
+            background: rgba(255, 50, 50, 0.1);
+            border: 1px dashed #ff3232;
             padding: 20px;
             border-radius: 10px;
             margin-top: 30px;
@@ -412,7 +448,7 @@
         }
         
         .edit-notice strong {
-            color: #00e0ff;
+            color: #ff3232;
         }
         
         footer {
@@ -421,21 +457,51 @@
             color: #88aaff;
             font-size: 0.9rem;
             padding: 30px 0;
-            border-top: 1px solid rgba(0, 100, 200, 0.2);
+            border-top: 1px solid rgba(255, 50, 50, 0.2);
         }
         
         .glow-text {
-            text-shadow: 0 0 10px rgba(0, 224, 255, 0.7);
+            text-shadow: 0 0 10px rgba(255, 50, 50, 0.7);
+        }
+        
+        .rule-box {
+            background: rgba(255, 50, 50, 0.1);
+            border: 1px solid rgba(255, 50, 50, 0.3);
+            border-radius: 8px;
+            padding: 15px;
+            margin: 20px 0;
+            text-align: center;
+            font-style: italic;
         }
         
         /* Binary code animation */
         .binary-code {
             position: fixed;
-            color: rgba(0, 200, 255, 0.1);
+            color: rgba(255, 100, 100, 0.1);
             font-size: 1rem;
             font-family: monospace;
             z-index: -1;
             user-select: none;
+        }
+        
+        .red-dot {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background-color: #ff3232;
+            border-radius: 50%;
+            margin-right: 8px;
+            box-shadow: 0 0 8px #ff3232;
+        }
+        
+        .blue-dot {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background-color: #00a2ff;
+            border-radius: 50%;
+            margin-right: 8px;
+            box-shadow: 0 0 8px #00a2ff;
         }
         
         /* Responsive adjustments */
@@ -456,6 +522,27 @@
                 gap: 20px;
             }
         }
+        
+        .status-indicator {
+            display: inline-flex;
+            align-items: center;
+            padding: 5px 10px;
+            background: rgba(255, 50, 50, 0.2);
+            border-radius: 15px;
+            font-size: 0.8rem;
+            margin-left: 10px;
+            border: 1px solid rgba(255, 50, 50, 0.4);
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { opacity: 0.6; }
+            50% { opacity: 1; }
+            100% { opacity: 0.6; }
+        }
     </style>
 </head>
 <body>
@@ -463,6 +550,7 @@
     <div class="tech-grid"></div>
     <div class="glowing-orb orb-1"></div>
     <div class="glowing-orb orb-2"></div>
+    <div class="glowing-orb orb-3"></div>
     
     <!-- Binary code animation elements -->
     <div class="binary-code" style="top: 10%; left: 5%;">10101010</div>
@@ -477,7 +565,7 @@
                     <i class="fas fa-user-astronaut"></i>
                 </div>
                 <h1>DHANAVARATHAN P</h1>
-                <p class="tagline">dhanavarathanperumal-art · he/him</p>
+                <p class="tagline">dhanavarathanperumal-art · he/him <span class="status-indicator pulse"><span class="red-dot"></span>Online</span></p>
                 <p>Tech enthusiast <span class="emoji">🐍</span>, Spread kindness <span class="emoji">💜</span>, Help others <span class="emoji">🌟</span></p>
                 
                 <div class="social-links">
@@ -497,31 +585,36 @@
         <div class="content-wrapper">
             <div class="card about-section">
                 <h2><i class="fas fa-user-circle"></i> About Me</h2>
-                <p>Hi! I'm <span class="highlight">Dhanavarathan P</span>, a tech enthusiast from Puducherry, Tamil Nadu, India. I'm passionate about programming, especially in Python, and I love building projects that solve real-world problems.</p>
-                <p><span class="emoji">🐍</span> Python developer | <span class="emoji">🤖</span> AI/ML enthusiast | <span class="emoji">🔧</span> Problem solver</p>
-                <p>My personal rule: <span class="highlight">"Treat me as you'd like to be treated"</span> <span class="emoji">😊</span></p>
+                <p>Hi! I'm <span class="highlight">Dhanavarathan P</span>, a tech enthusiast from <span class="highlight">Puducherry, Tamil Nadu, India</span>. I'm passionate about programming, especially in <span class="highlight">Python</span>, and I love building projects that solve real-world problems.</p>
+                <p><span class="emoji">🐍</span> <span class="highlight">Python developer</span> | <span class="emoji">🤖</span> <span class="highlight">AI/ML enthusiast</span> | <span class="emoji">🔧</span> <span class="highlight">Problem solver</span></p>
+                
+                <div class="rule-box">
+                    <p>My personal rule: <span class="highlight">"Treat me as you'd like to be treated"</span> <span class="emoji">😊</span></p>
+                </div>
                 
                 <div class="info-item">
                     <i class="fas fa-map-marker-alt"></i>
-                    <span>Puducherry, Tamil Nadu, India</span>
+                    <span><span class="highlight">Puducherry, Tamil Nadu, India</span></span>
                 </div>
                 <div class="info-item">
                     <i class="fas fa-envelope"></i>
-                    <span>dhanavarathanperumal@gmail.com</span>
+                    <span><span class="highlight">dhanavarathanperumal@gmail.com</span></span>
                 </div>
                 <div class="info-item">
                     <i class="fab fa-reddit"></i>
-                    <span>Reddit: <a href="https://www.reddit.com/u/Dhanavarathan/s/duDUBiDIKR" style="color: #00e0ff;">u/Dhanavarathan</a></span>
+                    <span>Reddit: <a href="https://www.reddit.com/u/Dhanavarathan/s/duDUBiDIKR" style="color: #ff3232;">u/Dhanavarathan</a></span>
                 </div>
                 
-                <h3 style="margin-top: 25px; margin-bottom: 15px; color: #00a2ff;">Tech Stack</h3>
+                <h3 style="margin-top: 25px; margin-bottom: 15px; color: #ff3232;">
+                    <span class="red-dot"></span> Tech Stack
+                </h3>
                 <div>
-                    <span class="tech-tag">Python</span>
-                    <span class="tech-tag">RAG (Retrieval-Augmented Generation)</span>
-                    <span class="tech-tag">Machine Learning</span>
-                    <span class="tech-tag">HTML/CSS</span>
-                    <span class="tech-tag">JavaScript</span>
-                    <span class="tech-tag">AI/ML</span>
+                    <span class="tech-tag"><i class="fab fa-python"></i> Python</span>
+                    <span class="tech-tag-blue">RAG (Retrieval-Augmented Generation)</span>
+                    <span class="tech-tag"><i class="fas fa-robot"></i> Machine Learning</span>
+                    <span class="tech-tag-blue">HTML/CSS</span>
+                    <span class="tech-tag"><i class="fab fa-js-square"></i> JavaScript</span>
+                    <span class="tech-tag-blue">AI/ML</span>
                     <span class="tech-tag">NLP</span>
                 </div>
             </div>
@@ -531,63 +624,4 @@
                 <div class="projects">
                     <div class="project-item">
                         <div class="project-title">RAG-Offline-with-Feature</div>
-                        <div class="project-desc">An offline implementation of RAG (Retrieval-Augmented Generation) with additional features for local document processing and question answering.</div>
-                        <div>
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">RAG</span>
-                            <span class="tech-tag">NLP</span>
-                            <span class="tech-tag">AI</span>
-                        </div>
-                    </div>
-                    
-                    <div class="project-item">
-                        <div class="project-title">RAG-FRA</div>
-                        <div class="project-desc">Creating a new feature! A specialized RAG implementation with enhanced functionality for specific use cases.</div>
-                        <div>
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">AI</span>
-                            <span class="tech-tag">Machine Learning</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="stats">
-                    <div>
-                        <div class="stat-number">4</div>
-                        <div class="stat-label">Repositories</div>
-                    </div>
-                    <div>
-                        <div class="stat-number">0</div>
-                        <div class="stat-label">Organizations</div>
-                    </div>
-                    <div>
-                        <div class="stat-number">1</div>
-                        <div class="stat-label">Starred</div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="card notes-section">
-                <h2><i class="fas fa-sticky-note"></i> Notes & Thoughts</h2>
-                
-                <div class="notes-container">
-                    <!-- ============================================= -->
-                    <!-- EDITABLE NOTES SECTION -
-                    link :https://copilot.microsoft.com/shares/3wEiJAzwCNYhSobn87rLB -->
-                    <!-- ============================================= -->
-                    
-                    <div class="note-item">
-                        <div class="note-title">Learning RAG Systems</div>
-                        <div class="note-content">
-                            Currently exploring advanced RAG techniques for better document retrieval and generation. Working on improving the offline capabilities of my RAG implementation.
-                        </div>
-                        <div class="note-date"><i class="far fa-calendar"></i> January 20, 2025</div>
-                    </div>
-                    
-                    <div class="note-item">
-                        <div class="note-title">Python Project Ideas</div>
-                        <div class="note-content">
-                            1. Offline document Q&A system<br>
-                            2. Personal AI assistant for coding<br>
-                            3. Automated note-taking from meetings<br>
-                
+                        <div 
