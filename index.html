@@ -3,75 +3,149 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DHANAVARATHAN P - Personal Website</title>
+    <title>DHANAVARATHAN P - Tech Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        
-        :root {
-            --primary-color: #2563eb;
-            --secondary-color: #3b82f6;
-            --accent-color: #f59e0b;
-            --light-bg: #f8fafc;
-            --dark-text: #1e293b;
-            --light-text: #64748b;
-            --card-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
-            --transition: all 0.3s ease;
+            font-family: 'Segoe UI', 'Courier New', monospace;
         }
         
         body {
-            background-color: #f8fafc;
-            color: var(--dark-text);
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(20, 100, 220, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(120, 20, 220, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 40% 80%, rgba(0, 200, 255, 0.1) 0%, transparent 50%),
+                #0a0a14;
+            background-attachment: fixed;
+            color: #e0e0ff;
             line-height: 1.6;
-            padding-bottom: 40px;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        
+        /* Animated background elements */
+        .tech-grid {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(rgba(0, 150, 255, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 150, 255, 0.05) 1px, transparent 1px);
+            background-size: 50px 50px;
+            z-index: -1;
+            animation: gridMove 20s linear infinite;
+        }
+        
+        @keyframes gridMove {
+            0% { transform: translateY(0) translateX(0); }
+            100% { transform: translateY(50px) translateX(25px); }
+        }
+        
+        .glowing-orb {
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(40px);
+            z-index: -1;
+            opacity: 0.3;
+        }
+        
+        .orb-1 {
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(0, 100, 255, 0.7), transparent 70%);
+            top: 10%;
+            left: 5%;
+            animation: float 25s infinite ease-in-out;
+        }
+        
+        .orb-2 {
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(150, 0, 255, 0.5), transparent 70%);
+            bottom: 10%;
+            right: 5%;
+            animation: float 30s infinite ease-in-out reverse;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            25% { transform: translate(20px, -20px) scale(1.05); }
+            50% { transform: translate(0, -40px) scale(1); }
+            75% { transform: translate(-20px, -20px) scale(0.95); }
         }
         
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 20px;
+            position: relative;
+            z-index: 1;
         }
         
         header {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            color: white;
-            padding: 60px 0 40px;
             text-align: center;
-            border-bottom-left-radius: 20px;
-            border-bottom-right-radius: 20px;
-            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.15);
+            padding: 60px 0 40px;
+            position: relative;
+        }
+        
+        .cyber-border {
+            position: relative;
+            padding: 30px;
+            border: 1px solid rgba(0, 150, 255, 0.3);
+            border-radius: 10px;
+            background: rgba(10, 15, 30, 0.7);
+            backdrop-filter: blur(10px);
+            box-shadow: 
+                0 0 20px rgba(0, 100, 255, 0.2),
+                inset 0 0 20px rgba(0, 100, 255, 0.1);
         }
         
         .avatar {
             width: 140px;
             height: 140px;
             border-radius: 50%;
-            background: linear-gradient(45deg, #f59e0b, #fbbf24);
+            margin: 0 auto 20px;
+            position: relative;
+            background: linear-gradient(45deg, #0a0a14, #1a1a2e);
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 20px;
+            border: 2px solid #00a2ff;
+            box-shadow: 
+                0 0 25px rgba(0, 162, 255, 0.5),
+                inset 0 0 25px rgba(0, 100, 255, 0.2);
+        }
+        
+        .avatar i {
             font-size: 3.5rem;
-            color: white;
-            border: 5px solid rgba(255, 255, 255, 0.2);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            color: #00e0ff;
+            text-shadow: 0 0 10px rgba(0, 224, 255, 0.7);
         }
         
         h1 {
-            font-size: 2.8rem;
-            margin-bottom: 8px;
-            letter-spacing: -0.5px;
+            font-size: 3rem;
+            margin-bottom: 10px;
+            background: linear-gradient(90deg, #00a2ff, #00e0ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 15px rgba(0, 162, 255, 0.5);
+            letter-spacing: 1px;
         }
         
         .tagline {
             font-size: 1.2rem;
-            opacity: 0.9;
-            margin-bottom: 20px;
+            color: #a0c8ff;
+            margin-bottom: 15px;
+        }
+        
+        .emoji {
+            font-size: 1.2rem;
+            margin: 0 5px;
         }
         
         .social-links {
@@ -85,131 +159,197 @@
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            width: 45px;
-            height: 45px;
-            background-color: rgba(255, 255, 255, 0.15);
+            width: 50px;
+            height: 50px;
+            background: rgba(0, 40, 80, 0.5);
             border-radius: 50%;
-            color: white;
-            font-size: 1.2rem;
-            transition: var(--transition);
+            color: #00e0ff;
+            font-size: 1.3rem;
+            transition: all 0.3s ease;
             text-decoration: none;
+            border: 1px solid rgba(0, 162, 255, 0.3);
         }
         
         .social-icon:hover {
-            background-color: rgba(255, 255, 255, 0.25);
-            transform: translateY(-3px);
+            background: rgba(0, 100, 200, 0.7);
+            transform: translateY(-5px);
+            box-shadow: 0 0 20px rgba(0, 162, 255, 0.7);
+            color: white;
         }
         
         .content-wrapper {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 40px;
+            gap: 30px;
             margin-top: 40px;
         }
         
-        @media (max-width: 768px) {
+        @media (max-width: 900px) {
             .content-wrapper {
                 grid-template-columns: 1fr;
             }
         }
         
         .card {
-            background-color: white;
-            border-radius: 16px;
+            background: rgba(15, 20, 40, 0.7);
+            border-radius: 10px;
             padding: 30px;
-            box-shadow: var(--card-shadow);
-            transition: var(--transition);
+            border: 1px solid rgba(0, 100, 200, 0.2);
+            backdrop-filter: blur(10px);
+            box-shadow: 
+                0 10px 30px rgba(0, 0, 0, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: linear-gradient(to bottom, #00a2ff, #00e0ff);
         }
         
         .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+            transform: translateY(-10px);
+            box-shadow: 
+                0 15px 35px rgba(0, 0, 0, 0.5),
+                0 0 30px rgba(0, 100, 255, 0.2),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
         }
         
         .card h2 {
-            color: var(--primary-color);
-            margin-bottom: 20px;
-            padding-bottom: 12px;
-            border-bottom: 2px solid #e2e8f0;
+            color: #00e0ff;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid rgba(0, 162, 255, 0.3);
+            font-size: 1.8rem;
             display: flex;
             align-items: center;
             gap: 10px;
         }
         
         .card h2 i {
-            color: var(--accent-color);
+            color: #00a2ff;
         }
         
         .about-section p {
             margin-bottom: 15px;
             font-size: 1.05rem;
+            color: #c0d0ff;
+        }
+        
+        .highlight {
+            color: #00e0ff;
+            font-weight: 600;
         }
         
         .info-item {
             display: flex;
             align-items: center;
             margin-bottom: 15px;
+            color: #a0c8ff;
         }
         
         .info-item i {
             width: 30px;
-            color: var(--primary-color);
+            color: #00a2ff;
             font-size: 1.2rem;
         }
         
         .tech-tag {
             display: inline-block;
-            background-color: #e0f2fe;
-            color: var(--primary-color);
-            padding: 5px 12px;
+            background: rgba(0, 100, 200, 0.2);
+            color: #00e0ff;
+            padding: 8px 15px;
             border-radius: 20px;
             font-size: 0.9rem;
-            margin-right: 8px;
-            margin-bottom: 8px;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            border: 1px solid rgba(0, 162, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .tech-tag:hover {
+            background: rgba(0, 100, 200, 0.4);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 100, 200, 0.3);
         }
         
         .projects {
             display: flex;
             flex-direction: column;
-            gap: 20px;
+            gap: 25px;
             margin-top: 20px;
         }
         
         .project-item {
-            border-left: 4px solid var(--accent-color);
-            padding-left: 15px;
+            padding: 20px;
+            background: rgba(10, 20, 40, 0.5);
+            border-radius: 8px;
+            border-left: 3px solid #00a2ff;
+            transition: all 0.3s ease;
+        }
+        
+        .project-item:hover {
+            background: rgba(20, 40, 80, 0.5);
+            transform: translateX(5px);
         }
         
         .project-title {
             font-weight: 600;
-            color: var(--dark-text);
-            margin-bottom: 5px;
+            color: #00e0ff;
+            margin-bottom: 10px;
+            font-size: 1.3rem;
         }
         
         .project-desc {
-            color: var(--light-text);
+            color: #a0c8ff;
             font-size: 0.95rem;
+            margin-bottom: 15px;
+        }
+        
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            text-align: center;
+            margin-top: 30px;
+            padding: 20px;
+            background: rgba(10, 20, 40, 0.5);
+            border-radius: 10px;
+            border: 1px solid rgba(0, 100, 200, 0.2);
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #00e0ff;
+            text-shadow: 0 0 10px rgba(0, 224, 255, 0.5);
+            margin-bottom: 5px;
+        }
+        
+        .stat-label {
+            color: #a0c8ff;
+            font-size: 0.9rem;
         }
         
         .notes-section {
             grid-column: 1 / -1;
-            margin-top: 20px;
-        }
-        
-        .notes-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 25px;
+            margin-top: 30px;
         }
         
         .notes-container {
-            background-color: #fef7cd;
-            border-left: 6px solid var(--accent-color);
-            padding: 25px;
-            border-radius: 12px;
-            min-height: 300px;
+            background: rgba(10, 15, 30, 0.8);
+            border-radius: 10px;
+            padding: 30px;
+            margin-top: 20px;
+            border: 1px solid rgba(0, 162, 255, 0.3);
             position: relative;
+            overflow: hidden;
         }
         
         .notes-container::before {
@@ -217,100 +357,143 @@
             position: absolute;
             top: -12px;
             left: 20px;
-            background-color: var(--accent-color);
-            color: white;
+            background: linear-gradient(90deg, #00a2ff, #00e0ff);
+            color: #0a0a14;
             padding: 5px 15px;
             border-radius: 20px;
             font-size: 0.8rem;
-            font-weight: 600;
+            font-weight: 700;
+            letter-spacing: 1px;
+            z-index: 2;
         }
         
         .note-item {
-            background-color: white;
-            padding: 15px;
-            border-radius: 10px;
-            margin-bottom: 15px;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+            background: rgba(20, 30, 60, 0.6);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border-left: 3px solid #00e0ff;
+            transition: all 0.3s ease;
+        }
+        
+        .note-item:hover {
+            background: rgba(30, 50, 90, 0.6);
+            transform: translateX(5px);
         }
         
         .note-title {
             font-weight: 600;
-            color: var(--primary-color);
-            margin-bottom: 5px;
+            color: #00e0ff;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
         }
         
         .note-content {
-            color: var(--dark-text);
+            color: #c0d0ff;
+            margin-bottom: 10px;
         }
         
         .note-date {
             font-size: 0.85rem;
-            color: var(--light-text);
-            margin-top: 8px;
+            color: #88aaff;
             display: flex;
             align-items: center;
             gap: 5px;
         }
         
-        footer {
-            text-align: center;
-            margin-top: 50px;
-            color: var(--light-text);
-            font-size: 0.9rem;
-            padding-top: 20px;
-            border-top: 1px solid #e2e8f0;
-        }
-        
-        .highlight {
-            color: var(--primary-color);
-            font-weight: 600;
-        }
-        
-        .emoji {
-            font-size: 1.2rem;
-            margin-right: 5px;
-        }
-        
         .edit-notice {
-            background-color: #f0f9ff;
-            border: 1px dashed var(--primary-color);
-            padding: 15px;
+            background: rgba(0, 50, 100, 0.3);
+            border: 1px dashed #00a2ff;
+            padding: 20px;
             border-radius: 10px;
             margin-top: 30px;
-            color: var(--light-text);
+            color: #a0c8ff;
             font-size: 0.95rem;
         }
         
         .edit-notice strong {
-            color: var(--primary-color);
+            color: #00e0ff;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 60px;
+            color: #88aaff;
+            font-size: 0.9rem;
+            padding: 30px 0;
+            border-top: 1px solid rgba(0, 100, 200, 0.2);
+        }
+        
+        .glow-text {
+            text-shadow: 0 0 10px rgba(0, 224, 255, 0.7);
+        }
+        
+        /* Binary code animation */
+        .binary-code {
+            position: fixed;
+            color: rgba(0, 200, 255, 0.1);
+            font-size: 1rem;
+            font-family: monospace;
+            z-index: -1;
+            user-select: none;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            .cyber-border {
+                padding: 20px;
+            }
+            
+            .card {
+                padding: 20px;
+            }
+            
+            .content-wrapper {
+                gap: 20px;
+            }
         }
     </style>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <div class="avatar">
-                <i class="fas fa-user"></i>
-            </div>
-            <h1>DHANAVARATHAN P</h1>
-            <p class="tagline">dhanavarathanperumal-art · he/him</p>
-            <p>Tech enthusiast <span class="emoji">🐍</span>, Spread kindness <span class="emoji">❤️</span>, Help others <span class="emoji">💪</span></p>
-            
-            <div class="social-links">
-                <a href="mailto:dhanavarathanperumal@gmail.com" class="social-icon" title="Email">
-                    <i class="fas fa-envelope"></i>
-                </a>
-                <a href="https://www.reddit.com/u/Dhanavarathan/s/duDUBiDIKR" class="social-icon" title="Reddit">
-                    <i class="fab fa-reddit"></i>
-                </a>
-                <a href="#" class="social-icon" title="GitHub">
-                    <i class="fab fa-github"></i>
-                </a>
-            </div>
-        </div>
-    </header>
+    <!-- Background elements -->
+    <div class="tech-grid"></div>
+    <div class="glowing-orb orb-1"></div>
+    <div class="glowing-orb orb-2"></div>
+    
+    <!-- Binary code animation elements -->
+    <div class="binary-code" style="top: 10%; left: 5%;">10101010</div>
+    <div class="binary-code" style="top: 30%; right: 10%;">00110011</div>
+    <div class="binary-code" style="bottom: 20%; left: 15%;">11001100</div>
+    <div class="binary-code" style="bottom: 40%; right: 5%;">01010101</div>
     
     <div class="container">
+        <header>
+            <div class="cyber-border">
+                <div class="avatar">
+                    <i class="fas fa-user-astronaut"></i>
+                </div>
+                <h1>DHANAVARATHAN P</h1>
+                <p class="tagline">dhanavarathanperumal-art · he/him</p>
+                <p>Tech enthusiast <span class="emoji">🐍</span>, Spread kindness <span class="emoji">💜</span>, Help others <span class="emoji">🌟</span></p>
+                
+                <div class="social-links">
+                    <a href="mailto:dhanavarathanperumal@gmail.com" class="social-icon" title="Email">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                    <a href="https://www.reddit.com/u/Dhanavarathan/s/duDUBiDIKR" class="social-icon" title="Reddit">
+                        <i class="fab fa-reddit"></i>
+                    </a>
+                    <a href="#" class="social-icon" title="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </div>
+            </div>
+        </header>
+        
         <div class="content-wrapper">
             <div class="card about-section">
                 <h2><i class="fas fa-user-circle"></i> About Me</h2>
@@ -327,17 +510,19 @@
                     <span>dhanavarathanperumal@gmail.com</span>
                 </div>
                 <div class="info-item">
-                    <i class="fas fa-link"></i>
-                    <span>Reddit: <a href="https://www.reddit.com/u/Dhanavarathan/s/duDUBiDIKR">u/Dhanavarathan</a></span>
+                    <i class="fab fa-reddit"></i>
+                    <span>Reddit: <a href="https://www.reddit.com/u/Dhanavarathan/s/duDUBiDIKR" style="color: #00e0ff;">u/Dhanavarathan</a></span>
                 </div>
                 
-                <h3 style="margin-top: 25px; margin-bottom: 10px; color: var(--primary-color);">Tech Stack</h3>
+                <h3 style="margin-top: 25px; margin-bottom: 15px; color: #00a2ff;">Tech Stack</h3>
                 <div>
                     <span class="tech-tag">Python</span>
                     <span class="tech-tag">RAG (Retrieval-Augmented Generation)</span>
                     <span class="tech-tag">Machine Learning</span>
                     <span class="tech-tag">HTML/CSS</span>
                     <span class="tech-tag">JavaScript</span>
+                    <span class="tech-tag">AI/ML</span>
+                    <span class="tech-tag">NLP</span>
                 </div>
             </div>
             
@@ -347,36 +532,43 @@
                     <div class="project-item">
                         <div class="project-title">RAG-Offline-with-Feature</div>
                         <div class="project-desc">An offline implementation of RAG (Retrieval-Augmented Generation) with additional features for local document processing and question answering.</div>
-                        <div><span class="tech-tag">Python</span> <span class="tech-tag">RAG</span> <span class="tech-tag">NLP</span></div>
+                        <div>
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">RAG</span>
+                            <span class="tech-tag">NLP</span>
+                            <span class="tech-tag">AI</span>
+                        </div>
                     </div>
                     
                     <div class="project-item">
                         <div class="project-title">RAG-FRA</div>
                         <div class="project-desc">Creating a new feature! A specialized RAG implementation with enhanced functionality for specific use cases.</div>
-                        <div><span class="tech-tag">Python</span> <span class="tech-tag">AI</span></div>
+                        <div>
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">AI</span>
+                            <span class="tech-tag">Machine Learning</span>
+                        </div>
                     </div>
                 </div>
                 
-                <div style="margin-top: 30px; display: flex; gap: 30px;">
+                <div class="stats">
                     <div>
-                        <h3 style="color: var(--primary-color); font-size: 2.5rem; margin-bottom: 5px;">4</h3>
-                        <p style="color: var(--light-text);">Repositories</p>
+                        <div class="stat-number">4</div>
+                        <div class="stat-label">Repositories</div>
                     </div>
                     <div>
-                        <h3 style="color: var(--primary-color); font-size: 2.5rem; margin-bottom: 5px;">0</h3>
-                        <p style="color: var(--light-text);">Organizations</p>
+                        <div class="stat-number">0</div>
+                        <div class="stat-label">Organizations</div>
                     </div>
                     <div>
-                        <h3 style="color: var(--primary-color); font-size: 2.5rem; margin-bottom: 5px;">1</h3>
-                        <p style="color: var(--light-text);">Starred</p>
+                        <div class="stat-number">1</div>
+                        <div class="stat-label">Starred</div>
                     </div>
                 </div>
             </div>
             
             <div class="card notes-section">
-                <div class="notes-header">
-                    <h2><i class="fas fa-sticky-note"></i> Notes & Thoughts</h2>
-                </div>
+                <h2><i class="fas fa-sticky-note"></i> Notes & Thoughts</h2>
                 
                 <div class="notes-container">
                     <!-- ============================================= -->
@@ -397,68 +589,4 @@
                             1. Offline document Q&A system<br>
                             2. Personal AI assistant for coding<br>
                             3. Automated note-taking from meetings<br>
-                            4. Code review assistant
-                        </div>
-                        <div class="note-date"><i class="far fa-calendar"></i> January 15, 2025</div>
-                    </div>
-                    
-                    <div class="note-item">
-                        <div class="note-title">Tech Goals for 2025</div>
-                        <div class="note-content">
-                            - Master advanced Python concepts<br>
-                            - Build at least 4 major projects<br>
-                            - Contribute to open source<br>
-                            - Learn more about AI ethics and responsible AI
-                        </div>
-                        <div class="note-date"><i class="far fa-calendar"></i> January 10, 2025</div>
-                    </div>
-                    <div class="note-item">
-    <div class="note-title">Your Title Here</div>
-    <div class="note-content">
-        Tech Goals for 2026
-- Master advanced Python concepts
-- Build at least 4 major projects
-- Contribute to open source
-- Learn more about AI ethics and responsible AI
-
-    </div>
-    <div class="note-date"><i class="far fa-calendar"></i> Date Here</div>
-</div>
-                    
-                </div>
                 
-                <div class="edit-notice">
-                    <p><strong>How to edit notes:</strong> You can directly edit the notes above by modifying the HTML code. Look for the "EDITABLE NOTES SECTION" comment in the code and update the note-item divs with your own content, or add new note-item divs following the same structure.</p>
-                </div>
-            </div>
-        </div>
-        
-        <footer>
-            <p>Made with ❤️ by DHANAVARATHAN P | 2025</p>
-            <p>Imperfect but trying <span class="emoji">😅</span></p>
-        </footer>
-    </div>
-
-    <script>
-        // Simple script to add interactivity
-        document.addEventListener('DOMContentLoaded', function() {
-            // Add click animation to cards
-            const cards = document.querySelectorAll('.card');
-            cards.forEach(card => {
-                card.addEventListener('click', function() {
-                    this.style.transform = 'translateY(-5px)';
-                    setTimeout(() => {
-                        this.style.transform = '';
-                    }, 300);
-                });
-            });
-            
-            // Update current year in footer
-            const yearSpan = document.querySelector('footer p');
-            if (yearSpan) {
-                yearSpan.innerHTML = yearSpan.innerHTML.replace('2025', new Date().getFullYear());
-            }
-        });
-    </script>
-</body>
-</html>
