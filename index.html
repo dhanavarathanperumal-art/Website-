@@ -380,6 +380,7 @@
             border: 1px solid rgba(255, 50, 50, 0.3);
             position: relative;
             overflow: hidden;
+            min-height: 400px;
         }
         
         .notes-container::before {
@@ -404,6 +405,7 @@
             margin-bottom: 20px;
             border-left: 3px solid #ff3232;
             transition: all 0.3s ease;
+            position: relative;
         }
         
         .note-item:hover {
@@ -418,11 +420,15 @@
             margin-bottom: 10px;
             font-size: 1.2rem;
             text-shadow: 0 0 5px rgba(255, 50, 50, 0.5);
+            padding-right: 40px;
         }
         
         .note-content {
             color: #c0d0ff;
             margin-bottom: 10px;
+            padding-right: 40px;
+            white-space: pre-wrap;
+            word-wrap: break-word;
         }
         
         .note-content strong {
@@ -632,583 +638,65 @@
             display: block;
         }
         
+        .warning {
+            background: rgba(255, 165, 0, 0.2);
+            color: #ffcc66;
+            border: 1px solid rgba(255, 165, 0, 0.5);
+            display: block;
+        }
+        
         .lock-icon {
             color: #ff3232;
             margin-right: 5px;
         }
         
-        /* Responsive adjustments */
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 2.2rem;
-            }
-            
-            .cyber-border {
-                padding: 20px;
-            }
-            
-            .card {
-                padding: 20px;
-            }
-            
-            .content-wrapper {
-                gap: 20px;
-            }
-            
-            .editor-controls {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-            
-            .password-form {
-                width: 100%;
-                flex-direction: column;
-                align-items: stretch;
-            }
-            
-            .password-input {
-                width: 100%;
-            }
-        }
-        
-        .status-indicator {
-            display: inline-flex;
-            align-items: center;
-            padding: 5px 10px;
+        /* Delete Button */
+        .delete-btn {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            width: 32px;
+            height: 32px;
             background: rgba(255, 50, 50, 0.2);
-            border-radius: 15px;
-            font-size: 0.8rem;
-            margin-left: 10px;
-            border: 1px solid rgba(255, 50, 50, 0.4);
+            border: 1px solid rgba(255, 50, 50, 0.5);
+            border-radius: 50%;
+            color: #ff9999;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 10;
         }
         
-        .pulse {
-            animation: pulse 2s infinite;
+        .editor-mode .delete-btn {
+            display: flex;
         }
         
-        @keyframes pulse {
-            0% { opacity: 0.6; }
-            50% { opacity: 1; }
-            100% { opacity: 0.6; }
-        }
-    </style>
-</head>
-<body>
-    <!-- Background elements -->
-    <div class="tech-grid"></div>
-    <div class="glowing-orb orb-1"></div>
-    <div class="glowing-orb orb-2"></div>
-    <div class="glowing-orb orb-3"></div>
-    
-    <!-- Binary code animation elements -->
-    <div class="binary-code" style="top: 10%; left: 5%;">10101010</div>
-    <div class="binary-code" style="top: 30%; right: 10%;">00110011</div>
-    <div class="binary-code" style="bottom: 20%; left: 15%;">11001100</div>
-    <div class="binary-code" style="bottom: 40%; right: 5%;">01010101</div>
-    
-    <div class="container">
-        <header>
-            <div class="cyber-border">
-                <div class="avatar">
-                    <i class="fas fa-user-astronaut"></i>
-                </div>
-                <h1>DHANAVARATHAN P</h1>
-                <p class="tagline">dhanavarathanperumal-art · he/him <span class="status-indicator pulse"><span class="red-dot"></span>Online</span></p>
-                <p>Tech enthusiast <span class="emoji">🐍</span>, Spread kindness <span class="emoji">💜</span>, Help others <span class="emoji">🌟</span></p>
-                
-                <div class="social-links">
-                    <a href="mailto:dhanavarathanperumal@gmail.com" class="social-icon" title="Email">
-                        <i class="fas fa-envelope"></i>
-                    </a>
-                    <a href="https://www.reddit.com/u/Dhanavarathan/s/duDUBiDIKR" class="social-icon" title="Reddit">
-                        <i class="fab fa-reddit"></i>
-                    </a>
-                    <a href="#" class="social-icon" title="GitHub">
-                        <i class="fab fa-github"></i>
-                    </a>
-                </div>
-            </div>
-        </header>
-        
-        <div class="content-wrapper">
-            <div class="card about-section">
-                <h2><i class="fas fa-user-circle"></i> About Me</h2>
-                <p>Hi! I'm <span class="highlight">Dhanavarathan P</span>, a tech enthusiast from <span class="highlight">Puducherry, Tamil Nadu, India</span>. I'm passionate about programming, especially in <span class="highlight">Python</span>, and I love building projects that solve real-world problems.</p>
-                <p><span class="emoji">🐍</span> <span class="highlight">Python developer</span> | <span class="emoji">🤖</span> <span class="highlight">AI/ML enthusiast</span> | <span class="emoji">🔧</span> <span class="highlight">Problem solver</span></p>
-                
-                <div class="rule-box">
-                    <p>My personal rule: <span class="highlight">"Treat me as you'd like to be treated"</span> <span class="emoji">😊</span></p>
-                </div>
-                
-                <div class="info-item">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <span><span class="highlight">Puducherry, Tamil Nadu, India</span></span>
-                </div>
-                <div class="info-item">
-                    <i class="fas fa-envelope"></i>
-                    <span><span class="highlight">dhanavarathanperumal@gmail.com</span></span>
-                </div>
-                <div class="info-item">
-                    <i class="fab fa-reddit"></i>
-                    <span>Reddit: <a href="https://www.reddit.com/u/Dhanavarathan/s/duDUBiDIKR" style="color: #ff3232;">u/Dhanavarathan</a></span>
-                </div>
-                
-                <h3 style="margin-top: 25px; margin-bottom: 15px; color: #ff3232;">
-                    <span class="red-dot"></span> Tech Stack
-                </h3>
-                <div>
-                    <span class="tech-tag"><i class="fab fa-python"></i> Python</span>
-                    <span class="tech-tag-blue">RAG (Retrieval-Augmented Generation)</span>
-                    <span class="tech-tag"><i class="fas fa-robot"></i> Machine Learning</span>
-                    <span class="tech-tag-blue">HTML/CSS</span>
-                    <span class="tech-tag"><i class="fab fa-js-square"></i> JavaScript</span>
-                    <span class="tech-tag-blue">AI/ML</span>
-                    <span class="tech-tag">NLP</span>
-                </div>
-            </div>
-            
-            <div class="card">
-                <h2><i class="fas fa-code"></i> Projects & Repositories</h2>
-                <div class="projects">
-                    <div class="project-item">
-                        <div class="project-title">RAG-Offline-with-Feature</div>
-                        <div class="project-desc">An <span class="highlight">offline implementation</span> of RAG (Retrieval-Augmented Generation) with additional features for local document processing and question answering.</div>
-                        <div>
-                            <span class="tech-tag"><i class="fab fa-python"></i> Python</span>
-                            <span class="tech-tag-blue">RAG</span>
-                            <span class="tech-tag">NLP</span>
-                            <span class="tech-tag-blue"><i class="fas fa-brain"></i> AI</span>
-                        </div>
-                    </div>
-                    
-                    <div class="project-item">
-                        <div class="project-title">RAG-FRA</div>
-                        <div class="project-desc"><span class="highlight">Creating a new feature!</span> A specialized RAG implementation with enhanced functionality for specific use cases.</div>
-                        <div>
-                            <span class="tech-tag"><i class="fab fa-python"></i> Python</span>
-                            <span class="tech-tag-blue">AI</span>
-                            <span class="tech-tag"><i class="fas fa-chart-line"></i> Machine Learning</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="stats">
-                    <div>
-                        <div class="stat-number">4</div>
-                        <div class="stat-label">Repositories</div>
-                    </div>
-                    <div>
-                        <div class="stat-number">0</div>
-                        <div class="stat-label">Organizations</div>
-                    </div>
-                    <div>
-                        <div class="stat-number">1</div>
-                        <div class="stat-label">Starred</div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="card notes-section">
-                <div class="editor-controls">
-                    <h2><i class="fas fa-sticky-note"></i> Notes & Thoughts <i class="fas fa-lock lock-icon"></i></h2>
-                    
-                    <div class="password-form">
-                        <input type="password" id="password-input" class="password-input" placeholder="Enter password to edit notes" title="Password: newnotes">
-                        <button id="unlock-btn" class="editor-btn"><i class="fas fa-unlock-alt"></i> Unlock Editor</button>
-                        <button id="save-btn" class="editor-btn save-btn" style="display: none;"><i class="fas fa-save"></i> Save Changes</button>
-                        <button id="cancel-btn" class="editor-btn" style="display: none;"><i class="fas fa-times"></i> Cancel</button>
-                    </div>
-                </div>
-                
-                <div id="message-area"></div>
-                
-                <div class="notes-container" id="notes-container">
-                    <!-- ============================================= -->
-                    <!-- EDITABLE NOTES SECTION                      -->
-                    <!-- ============================================= -->
-                    
-                    <div class="note-item" data-note-id="1">
-                        <div class="note-title" contenteditable="false">
-                            <span class="red-dot"></span> Learning RAG Systems
-                        </div>
-                        <div class="note-content" contenteditable="false">
-                            Currently exploring <strong>advanced RAG techniques</strong> for better document retrieval and generation. Working on improving the <strong>offline capabilities</strong> of my RAG implementation.
-                        </div>
-                        <div class="note-date" contenteditable="false">
-                            <i class="far fa-calendar"></i> January 20, 2025
-                        </div>
-                    </div>
-                    
-                    <div class="note-item" data-note-id="2">
-                        <div class="note-title" contenteditable="false">
-                            <span class="red-dot"></span> Python Project Ideas
-                        </div>
-                        <div class="note-content" contenteditable="false">
-                            1. <strong>Offline document Q&A system</strong><br>
-                            2. Personal AI assistant for coding<br>
-                            3. <strong>Automated note-taking</strong> from meetings<br>
-                            4. Code review assistant<br>
-                            5. <strong>AI-powered code debugger</strong>
-                        </div>
-                        <div class="note-date" contenteditable="false">
-                            <i class="far fa-calendar"></i> January 15, 2025
-                        </div>
-                    </div>
-                    
-                    <div class="note-item" data-note-id="3">
-                        <div class="note-title" contenteditable="false">
-                            <span class="red-dot"></span> Tech Goals for 2025
-                        </div>
-                        <div class="note-content" contenteditable="false">
-                            - Master <strong>advanced Python concepts</strong><br>
-                            - Build at least <strong>4 major projects</strong><br>
-                            - <strong>Contribute to open source</strong><br>
-                            - Learn more about <strong>AI ethics and responsible AI</strong><br>
-                            - Create a <strong>personal AI assistant</strong>
-                        </div>
-                        <div class="note-date" contenteditable="false">
-                            <i class="far fa-calendar"></i> January 10, 2025
-                        </div>
-                    </div>
-                    
-                    <div class="note-item" data-note-id="4">
-                        <div class="note-title" contenteditable="false">
-                            <span class="red-dot"></span> Resources to Explore
-                        </div>
-                        <div class="note-content" contenteditable="false">
-                            - <strong>FastAPI</strong> for building APIs<br>
-                            - <strong>LangChain</strong> for AI applications<br>
-                            - <strong>Docker</strong> for containerization<br>
-                            - <strong>TensorFlow/PyTorch</strong> for ML models<br>
-                            - <strong>Next.js</strong> for web applications
-                        </div>
-                        <div class="note-date" contenteditable="false">
-                            <i class="far fa-calendar"></i> January 5, 2025
-                        </div>
-                    </div>
-                    
-                    <!-- ============================================= -->
-                    <!-- END OF NOTES                                -->
-                    <!-- ============================================= -->
-                </div>
-                
-                <button id="add-note-btn" class="add-note-btn" style="display: none;">
-                    <i class="fas fa-plus"></i> Add New Note
-                </button>
-                
-                <div class="edit-notice">
-                    <p><strong><span class="red-dot"></span> Password Protected Editor:</strong> To edit notes, enter the password "newnotes" in the field above and click "Unlock Editor". You can then edit notes directly on the page and save changes.</p>
-                </div>
-            </div>
-        </div>
-        
-        <footer>
-            <p class="glow-text">Made with <span style="color: #ff3232;">❤️</span> by <span class="highlight">DHANAVARATHAN P</span> | <span id="current-year"></span></p>
-            <p><span class="highlight">Imperfect but trying</span> <span class="emoji">😅</span></p>
-        </footer>
-    </div>
-
-    <script>
-        // Set current year in footer
-        document.getElementById('current-year').textContent = new Date().getFullYear();
-        
-        // Password-protected notes editor
-        const CORRECT_PASSWORD = "newnotes";
-        let isEditorActive = false;
-        let originalNotes = {};
-        
-        // DOM Elements
-        const passwordInput = document.getElementById('password-input');
-        const unlockBtn = document.getElementById('unlock-btn');
-        const saveBtn = document.getElementById('save-btn');
-        const cancelBtn = document.getElementById('cancel-btn');
-        const addNoteBtn = document.getElementById('add-note-btn');
-        const notesContainer = document.getElementById('notes-container');
-        const messageArea = document.getElementById('message-area');
-        
-        // Show message function
-        function showMessage(text, type) {
-            messageArea.innerHTML = `<div class="message ${type}">${text}</div>`;
-            setTimeout(() => {
-                messageArea.innerHTML = '';
-            }, 3000);
+        .delete-btn:hover {
+            background: rgba(255, 50, 50, 0.8);
+            transform: scale(1.1);
+            box-shadow: 0 0 15px rgba(255, 50, 50, 0.7);
+            color: white;
         }
         
-        // Unlock editor function
-        unlockBtn.addEventListener('click', function() {
-            const enteredPassword = passwordInput.value.trim();
-            
-            if (enteredPassword === CORRECT_PASSWORD) {
-                activateEditor();
-                showMessage("Editor unlocked! You can now edit notes.", "success");
-                passwordInput.value = ""; // Clear password field
-            } else {
-                showMessage("Incorrect password! Try again.", "error");
-                passwordInput.focus();
-                passwordInput.style.borderColor = "#ff3232";
-                passwordInput.style.boxShadow = "0 0 10px rgba(255, 50, 50, 0.5)";
-                
-                // Reset border after 1 second
-                setTimeout(() => {
-                    passwordInput.style.borderColor = "";
-                    passwordInput.style.boxShadow = "";
-                }, 1000);
-            }
-        });
-        
-        // Enter key to unlock
-        passwordInput.addEventListener('keypress', function(e) {
-            if (e.key === 'Enter') {
-                unlockBtn.click();
-            }
-        });
-        
-        // Activate editor
-        function activateEditor() {
-            isEditorActive = true;
-            
-            // Show save and cancel buttons, hide unlock button
-            unlockBtn.style.display = 'none';
-            saveBtn.style.display = 'inline-block';
-            cancelBtn.style.display = 'inline-block';
-            addNoteBtn.style.display = 'block';
-            
-            // Add editor mode class to notes container
-            notesContainer.classList.add('editor-mode');
-            
-            // Make all notes editable
-            const noteTitles = document.querySelectorAll('.note-title');
-            const noteContents = document.querySelectorAll('.note-content');
-            const noteDates = document.querySelectorAll('.note-date');
-            
-            noteTitles.forEach(title => {
-                title.setAttribute('contenteditable', 'true');
-            });
-            
-            noteContents.forEach(content => {
-                content.setAttribute('contenteditable', 'true');
-            });
-            
-            noteDates.forEach(date => {
-                date.setAttribute('contenteditable', 'true');
-            });
-            
-            // Save original notes
-            saveOriginalNotes();
+        .note-item:hover .delete-btn {
+            display: flex;
         }
         
-        // Deactivate editor
-        function deactivateEditor() {
-            isEditorActive = false;
-            
-            // Show unlock button, hide save and cancel buttons
-            unlockBtn.style.display = 'inline-block';
-            saveBtn.style.display = 'none';
-            cancelBtn.style.display = 'none';
-            addNoteBtn.style.display = 'none';
-            
-            // Remove editor mode class
-            notesContainer.classList.remove('editor-mode');
-            
-            // Make all notes non-editable
-            const noteTitles = document.querySelectorAll('.note-title');
-            const noteContents = document.querySelectorAll('.note-content');
-            const noteDates = document.querySelectorAll('.note-date');
-            
-            noteTitles.forEach(title => {
-                title.setAttribute('contenteditable', 'false');
-            });
-            
-            noteContents.forEach(content => {
-                content.setAttribute('contenteditable', 'false');
-            });
-            
-            noteDates.forEach(date => {
-                date.setAttribute('contenteditable', 'false');
-            });
-            
-            // Restore original notes if cancel was clicked
-            if (window.cancelClicked) {
-                restoreOriginalNotes();
-                window.cancelClicked = false;
-            }
+        /* Confirm delete modal */
+        .delete-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(5px);
         }
         
-        // Save original notes
-        function saveOriginalNotes() {
-            originalNotes = {};
-            const noteItems = document.querySelectorAll('.note-item');
-            
-            noteItems.forEach(item => {
-                const id = item.getAttribute('data-note-id');
-                originalNotes[id] = {
-                    title: item.querySelector('.note-title').innerHTML,
-                    content: item.querySelector('.note-content').innerHTML,
-                    date: item.querySelector('.note-date').innerHTML
-                };
-            });
-        }
-        
-        // Restore original notes
-        function restoreOriginalNotes() {
-            const noteItems = document.querySelectorAll('.note-item');
-            
-            noteItems.forEach(item => {
-                const id = item.getAttribute('data-note-id');
-                if (originalNotes[id]) {
-                    item.querySelector('.note-title').innerHTML = originalNotes[id].title;
-                    item.querySelector('.note-content').innerHTML = originalNotes[id].content;
-                    item.querySelector('.note-date').innerHTML = originalNotes[id].date;
-                }
-            });
-        }
-        
-        // Save changes
-        saveBtn.addEventListener('click', function() {
-            // Create a simple backup in localStorage
-            const noteItems = document.querySelectorAll('.note-item');
-            const notesData = [];
-            
-            noteItems.forEach(item => {
-                notesData.push({
-                    title: item.querySelector('.note-title').innerHTML,
-                    content: item.querySelector('.note-content').innerHTML,
-                    date: item.querySelector('.note-date').innerHTML
-                });
-            });
-            
-            // Save to localStorage (for demo purposes)
-            localStorage.setItem('savedNotes', JSON.stringify(notesData));
-            
-            showMessage("Notes saved successfully!", "success");
-            deactivateEditor();
-        });
-        
-        // Cancel editing
-        cancelBtn.addEventListener('click', function() {
-            window.cancelClicked = true;
-            showMessage("Changes discarded. Editor locked.", "error");
-            deactivateEditor();
-        });
-        
-        // Add new note
-        addNoteBtn.addEventListener('click', function() {
-            const noteItems = document.querySelectorAll('.note-item');
-            const newId = noteItems.length + 1;
-            
-            const newNote = document.createElement('div');
-            newNote.className = 'note-item';
-            newNote.setAttribute('data-note-id', newId);
-            newNote.innerHTML = `
-                <div class="note-title" contenteditable="true">
-                    <span class="red-dot"></span> New Note Title
-                </div>
-                <div class="note-content" contenteditable="true">
-                    Enter your note content here...
-                </div>
-                <div class="note-date" contenteditable="true">
-                    <i class="far fa-calendar"></i> ${new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
-                </div>
-            `;
-            
-            notesContainer.appendChild(newNote);
-            showMessage("New note added! You can edit it now.", "success");
-        });
-        
-        // Add binary code animation
-        function createBinary() {
-            const binaryChars = ['0', '1'];
-            const container = document.querySelector('.container');
-            
-            for (let i = 0; i < 15; i++) {
-                const binary = document.createElement('div');
-                binary.className = 'binary-code';
-                binary.textContent = Array(8).fill(0).map(() => binaryChars[Math.floor(Math.random() * 2)]).join('');
-                
-                // Random position
-                binary.style.left = Math.random() * 100 + '%';
-                binary.style.top = Math.random() * 100 + '%';
-                binary.style.opacity = Math.random() * 0.2 + 0.05;
-                binary.style.fontSize = (Math.random() * 0.8 + 0.8) + 'rem';
-                
-                // Random color (red or blue tint)
-                if (Math.random() > 0.5) {
-                    binary.style.color = 'rgba(255, 100, 100, 0.1)';
-                } else {
-                    binary.style.color = 'rgba(100, 150, 255, 0.1)';
-                }
-                
-                document.body.appendChild(binary);
-                
-                // Animate binary
-                animateBinary(binary);
-            }
-        }
-        
-        function animateBinary(element) {
-            let x = parseFloat(element.style.left);
-            let y = parseFloat(element.style.top);
-            let xDir = Math.random() > 0.5 ? 1 : -1;
-            let yDir = Math.random() > 0.5 ? 1 : -1;
-            
-            function move() {
-                x += xDir * 0.1;
-                y += yDir * 0.1;
-                
-                // Bounce off edges
-                if (x > 95 || x < 5) xDir *= -1;
-                if (y > 95 || y < 5) yDir *= -1;
-                
-                element.style.left = x + '%';
-                element.style.top = y + '%';
-                
-                // Occasionally change the binary values
-                if (Math.random() < 0.01) {
-                    const binaryChars = ['0', '1'];
-                    element.textContent = Array(8).fill(0).map(() => binaryChars[Math.floor(Math.random() * 2)]).join('');
-                }
-                
-                requestAnimationFrame(move);
-            }
-            
-            move();
-        }
-        
-        // Initialize animations
-        document.addEventListener('DOMContentLoaded', function() {
-            createBinary();
-            
-            // Add hover effect to cards
-            const cards = document.querySelectorAll('.card');
-            cards.forEach(card => {
-                card.addEventListener('mouseenter', function() {
-                    this.style.boxShadow = 
-                        '0 15px 35px rgba(0, 0, 0, 0.5), 0 0 30px rgba(255, 50, 50, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1)';
-                });
-                
-                card.addEventListener('mouseleave', function() {
-                    this.style.boxShadow = '';
-                });
-            });
-            
-            // Add pulse animation to highlight elements
-            const highlights = document.querySelectorAll('.highlight');
-            highlights.forEach(highlight => {
-                highlight.addEventListener('mouseenter', function() {
-                    this.style.textShadow = '0 0 12px rgba(255, 50, 50, 0.8)';
-                });
-                
-                highlight.addEventListener('mouseleave', function() {
-                    this.style.textShadow = '0 0 8px rgba(255, 50, 50, 0.5)';
-                });
-            });
-            
-            // Check if there are saved notes in localStorage
-            const savedNotes = localStorage.getItem('savedNotes');
-            if (savedNotes) {
-                console.log("Saved notes found in browser storage");
-            }
-        });
-    </script>
-</body>
-</html>
+        .delete-moda
