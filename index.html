@@ -504,6 +504,139 @@
             box-shadow: 0 0 8px #00a2ff;
         }
         
+        /* Password Editor Styles */
+        .editor-controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        .password-form {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+        
+        .password-input {
+            padding: 10px 15px;
+            background: rgba(0, 20, 40, 0.7);
+            border: 1px solid rgba(255, 50, 50, 0.5);
+            border-radius: 5px;
+            color: #ff9999;
+            font-family: monospace;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+        
+        .password-input:focus {
+            border-color: #ff3232;
+            box-shadow: 0 0 10px rgba(255, 50, 50, 0.5);
+        }
+        
+        .editor-btn {
+            padding: 10px 20px;
+            background: rgba(255, 50, 50, 0.2);
+            color: #ff9999;
+            border: 1px solid rgba(255, 50, 50, 0.5);
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .editor-btn:hover {
+            background: rgba(255, 50, 50, 0.4);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(255, 50, 50, 0.3);
+        }
+        
+        .save-btn {
+            background: rgba(0, 200, 100, 0.2);
+            color: #66ffcc;
+            border: 1px solid rgba(0, 200, 100, 0.5);
+        }
+        
+        .save-btn:hover {
+            background: rgba(0, 200, 100, 0.4);
+            box-shadow: 0 5px 15px rgba(0, 200, 100, 0.3);
+        }
+        
+        .editor-mode .note-item {
+            background: rgba(30, 40, 80, 0.7);
+            border: 1px dashed rgba(255, 50, 50, 0.5);
+        }
+        
+        .editor-mode .note-title,
+        .editor-mode .note-content,
+        .editor-mode .note-date {
+            outline: none;
+            padding: 5px;
+            border-radius: 3px;
+            transition: all 0.3s ease;
+        }
+        
+        .editor-mode .note-title:focus,
+        .editor-mode .note-content:focus,
+        .editor-mode .note-date:focus {
+            background: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 0 5px rgba(255, 50, 50, 0.5);
+        }
+        
+        .editor-mode .note-content {
+            min-height: 80px;
+        }
+        
+        .add-note-btn {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background: rgba(255, 50, 50, 0.1);
+            border: 2px dashed rgba(255, 50, 50, 0.5);
+            border-radius: 8px;
+            color: #ff9999;
+            font-size: 1rem;
+            cursor: pointer;
+            margin-top: 15px;
+            transition: all 0.3s ease;
+        }
+        
+        .add-note-btn:hover {
+            background: rgba(255, 50, 50, 0.2);
+            border-color: #ff3232;
+            transform: translateY(-3px);
+        }
+        
+        .message {
+            padding: 10px 15px;
+            border-radius: 5px;
+            margin: 10px 0;
+            font-weight: 600;
+            text-align: center;
+            display: none;
+        }
+        
+        .success {
+            background: rgba(0, 200, 100, 0.2);
+            color: #66ffcc;
+            border: 1px solid rgba(0, 200, 100, 0.5);
+            display: block;
+        }
+        
+        .error {
+            background: rgba(255, 50, 50, 0.2);
+            color: #ff9999;
+            border: 1px solid rgba(255, 50, 50, 0.5);
+            display: block;
+        }
+        
+        .lock-icon {
+            color: #ff3232;
+            margin-right: 5px;
+        }
+        
         /* Responsive adjustments */
         @media (max-width: 768px) {
             h1 {
@@ -520,6 +653,21 @@
             
             .content-wrapper {
                 gap: 20px;
+            }
+            
+            .editor-controls {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .password-form {
+                width: 100%;
+                flex-direction: column;
+                align-items: stretch;
+            }
+            
+            .password-input {
+                width: 100%;
             }
         }
         
@@ -624,4 +772,443 @@
                 <div class="projects">
                     <div class="project-item">
                         <div class="project-title">RAG-Offline-with-Feature</div>
-                        <div 
+                        <div class="project-desc">An <span class="highlight">offline implementation</span> of RAG (Retrieval-Augmented Generation) with additional features for local document processing and question answering.</div>
+                        <div>
+                            <span class="tech-tag"><i class="fab fa-python"></i> Python</span>
+                            <span class="tech-tag-blue">RAG</span>
+                            <span class="tech-tag">NLP</span>
+                            <span class="tech-tag-blue"><i class="fas fa-brain"></i> AI</span>
+                        </div>
+                    </div>
+                    
+                    <div class="project-item">
+                        <div class="project-title">RAG-FRA</div>
+                        <div class="project-desc"><span class="highlight">Creating a new feature!</span> A specialized RAG implementation with enhanced functionality for specific use cases.</div>
+                        <div>
+                            <span class="tech-tag"><i class="fab fa-python"></i> Python</span>
+                            <span class="tech-tag-blue">AI</span>
+                            <span class="tech-tag"><i class="fas fa-chart-line"></i> Machine Learning</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="stats">
+                    <div>
+                        <div class="stat-number">4</div>
+                        <div class="stat-label">Repositories</div>
+                    </div>
+                    <div>
+                        <div class="stat-number">0</div>
+                        <div class="stat-label">Organizations</div>
+                    </div>
+                    <div>
+                        <div class="stat-number">1</div>
+                        <div class="stat-label">Starred</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card notes-section">
+                <div class="editor-controls">
+                    <h2><i class="fas fa-sticky-note"></i> Notes & Thoughts <i class="fas fa-lock lock-icon"></i></h2>
+                    
+                    <div class="password-form">
+                        <input type="password" id="password-input" class="password-input" placeholder="Enter password to edit notes" title="Password: newnotes">
+                        <button id="unlock-btn" class="editor-btn"><i class="fas fa-unlock-alt"></i> Unlock Editor</button>
+                        <button id="save-btn" class="editor-btn save-btn" style="display: none;"><i class="fas fa-save"></i> Save Changes</button>
+                        <button id="cancel-btn" class="editor-btn" style="display: none;"><i class="fas fa-times"></i> Cancel</button>
+                    </div>
+                </div>
+                
+                <div id="message-area"></div>
+                
+                <div class="notes-container" id="notes-container">
+                    <!-- ============================================= -->
+                    <!-- EDITABLE NOTES SECTION                      -->
+                    <!-- ============================================= -->
+                    
+                    <div class="note-item" data-note-id="1">
+                        <div class="note-title" contenteditable="false">
+                            <span class="red-dot"></span> Learning RAG Systems
+                        </div>
+                        <div class="note-content" contenteditable="false">
+                            Currently exploring <strong>advanced RAG techniques</strong> for better document retrieval and generation. Working on improving the <strong>offline capabilities</strong> of my RAG implementation.
+                        </div>
+                        <div class="note-date" contenteditable="false">
+                            <i class="far fa-calendar"></i> January 20, 2025
+                        </div>
+                    </div>
+                    
+                    <div class="note-item" data-note-id="2">
+                        <div class="note-title" contenteditable="false">
+                            <span class="red-dot"></span> Python Project Ideas
+                        </div>
+                        <div class="note-content" contenteditable="false">
+                            1. <strong>Offline document Q&A system</strong><br>
+                            2. Personal AI assistant for coding<br>
+                            3. <strong>Automated note-taking</strong> from meetings<br>
+                            4. Code review assistant<br>
+                            5. <strong>AI-powered code debugger</strong>
+                        </div>
+                        <div class="note-date" contenteditable="false">
+                            <i class="far fa-calendar"></i> January 15, 2025
+                        </div>
+                    </div>
+                    
+                    <div class="note-item" data-note-id="3">
+                        <div class="note-title" contenteditable="false">
+                            <span class="red-dot"></span> Tech Goals for 2025
+                        </div>
+                        <div class="note-content" contenteditable="false">
+                            - Master <strong>advanced Python concepts</strong><br>
+                            - Build at least <strong>4 major projects</strong><br>
+                            - <strong>Contribute to open source</strong><br>
+                            - Learn more about <strong>AI ethics and responsible AI</strong><br>
+                            - Create a <strong>personal AI assistant</strong>
+                        </div>
+                        <div class="note-date" contenteditable="false">
+                            <i class="far fa-calendar"></i> January 10, 2025
+                        </div>
+                    </div>
+                    
+                    <div class="note-item" data-note-id="4">
+                        <div class="note-title" contenteditable="false">
+                            <span class="red-dot"></span> Resources to Explore
+                        </div>
+                        <div class="note-content" contenteditable="false">
+                            - <strong>FastAPI</strong> for building APIs<br>
+                            - <strong>LangChain</strong> for AI applications<br>
+                            - <strong>Docker</strong> for containerization<br>
+                            - <strong>TensorFlow/PyTorch</strong> for ML models<br>
+                            - <strong>Next.js</strong> for web applications
+                        </div>
+                        <div class="note-date" contenteditable="false">
+                            <i class="far fa-calendar"></i> January 5, 2025
+                        </div>
+                    </div>
+                    
+                    <!-- ============================================= -->
+                    <!-- END OF NOTES                                -->
+                    <!-- ============================================= -->
+                </div>
+                
+                <button id="add-note-btn" class="add-note-btn" style="display: none;">
+                    <i class="fas fa-plus"></i> Add New Note
+                </button>
+                
+                <div class="edit-notice">
+                    <p><strong><span class="red-dot"></span> Password Protected Editor:</strong> To edit notes, enter the password "newnotes" in the field above and click "Unlock Editor". You can then edit notes directly on the page and save changes.</p>
+                </div>
+            </div>
+        </div>
+        
+        <footer>
+            <p class="glow-text">Made with <span style="color: #ff3232;">❤️</span> by <span class="highlight">DHANAVARATHAN P</span> | <span id="current-year"></span></p>
+            <p><span class="highlight">Imperfect but trying</span> <span class="emoji">😅</span></p>
+        </footer>
+    </div>
+
+    <script>
+        // Set current year in footer
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+        
+        // Password-protected notes editor
+        const CORRECT_PASSWORD = "newnotes";
+        let isEditorActive = false;
+        let originalNotes = {};
+        
+        // DOM Elements
+        const passwordInput = document.getElementById('password-input');
+        const unlockBtn = document.getElementById('unlock-btn');
+        const saveBtn = document.getElementById('save-btn');
+        const cancelBtn = document.getElementById('cancel-btn');
+        const addNoteBtn = document.getElementById('add-note-btn');
+        const notesContainer = document.getElementById('notes-container');
+        const messageArea = document.getElementById('message-area');
+        
+        // Show message function
+        function showMessage(text, type) {
+            messageArea.innerHTML = `<div class="message ${type}">${text}</div>`;
+            setTimeout(() => {
+                messageArea.innerHTML = '';
+            }, 3000);
+        }
+        
+        // Unlock editor function
+        unlockBtn.addEventListener('click', function() {
+            const enteredPassword = passwordInput.value.trim();
+            
+            if (enteredPassword === CORRECT_PASSWORD) {
+                activateEditor();
+                showMessage("Editor unlocked! You can now edit notes.", "success");
+                passwordInput.value = ""; // Clear password field
+            } else {
+                showMessage("Incorrect password! Try again.", "error");
+                passwordInput.focus();
+                passwordInput.style.borderColor = "#ff3232";
+                passwordInput.style.boxShadow = "0 0 10px rgba(255, 50, 50, 0.5)";
+                
+                // Reset border after 1 second
+                setTimeout(() => {
+                    passwordInput.style.borderColor = "";
+                    passwordInput.style.boxShadow = "";
+                }, 1000);
+            }
+        });
+        
+        // Enter key to unlock
+        passwordInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                unlockBtn.click();
+            }
+        });
+        
+        // Activate editor
+        function activateEditor() {
+            isEditorActive = true;
+            
+            // Show save and cancel buttons, hide unlock button
+            unlockBtn.style.display = 'none';
+            saveBtn.style.display = 'inline-block';
+            cancelBtn.style.display = 'inline-block';
+            addNoteBtn.style.display = 'block';
+            
+            // Add editor mode class to notes container
+            notesContainer.classList.add('editor-mode');
+            
+            // Make all notes editable
+            const noteTitles = document.querySelectorAll('.note-title');
+            const noteContents = document.querySelectorAll('.note-content');
+            const noteDates = document.querySelectorAll('.note-date');
+            
+            noteTitles.forEach(title => {
+                title.setAttribute('contenteditable', 'true');
+            });
+            
+            noteContents.forEach(content => {
+                content.setAttribute('contenteditable', 'true');
+            });
+            
+            noteDates.forEach(date => {
+                date.setAttribute('contenteditable', 'true');
+            });
+            
+            // Save original notes
+            saveOriginalNotes();
+        }
+        
+        // Deactivate editor
+        function deactivateEditor() {
+            isEditorActive = false;
+            
+            // Show unlock button, hide save and cancel buttons
+            unlockBtn.style.display = 'inline-block';
+            saveBtn.style.display = 'none';
+            cancelBtn.style.display = 'none';
+            addNoteBtn.style.display = 'none';
+            
+            // Remove editor mode class
+            notesContainer.classList.remove('editor-mode');
+            
+            // Make all notes non-editable
+            const noteTitles = document.querySelectorAll('.note-title');
+            const noteContents = document.querySelectorAll('.note-content');
+            const noteDates = document.querySelectorAll('.note-date');
+            
+            noteTitles.forEach(title => {
+                title.setAttribute('contenteditable', 'false');
+            });
+            
+            noteContents.forEach(content => {
+                content.setAttribute('contenteditable', 'false');
+            });
+            
+            noteDates.forEach(date => {
+                date.setAttribute('contenteditable', 'false');
+            });
+            
+            // Restore original notes if cancel was clicked
+            if (window.cancelClicked) {
+                restoreOriginalNotes();
+                window.cancelClicked = false;
+            }
+        }
+        
+        // Save original notes
+        function saveOriginalNotes() {
+            originalNotes = {};
+            const noteItems = document.querySelectorAll('.note-item');
+            
+            noteItems.forEach(item => {
+                const id = item.getAttribute('data-note-id');
+                originalNotes[id] = {
+                    title: item.querySelector('.note-title').innerHTML,
+                    content: item.querySelector('.note-content').innerHTML,
+                    date: item.querySelector('.note-date').innerHTML
+                };
+            });
+        }
+        
+        // Restore original notes
+        function restoreOriginalNotes() {
+            const noteItems = document.querySelectorAll('.note-item');
+            
+            noteItems.forEach(item => {
+                const id = item.getAttribute('data-note-id');
+                if (originalNotes[id]) {
+                    item.querySelector('.note-title').innerHTML = originalNotes[id].title;
+                    item.querySelector('.note-content').innerHTML = originalNotes[id].content;
+                    item.querySelector('.note-date').innerHTML = originalNotes[id].date;
+                }
+            });
+        }
+        
+        // Save changes
+        saveBtn.addEventListener('click', function() {
+            // Create a simple backup in localStorage
+            const noteItems = document.querySelectorAll('.note-item');
+            const notesData = [];
+            
+            noteItems.forEach(item => {
+                notesData.push({
+                    title: item.querySelector('.note-title').innerHTML,
+                    content: item.querySelector('.note-content').innerHTML,
+                    date: item.querySelector('.note-date').innerHTML
+                });
+            });
+            
+            // Save to localStorage (for demo purposes)
+            localStorage.setItem('savedNotes', JSON.stringify(notesData));
+            
+            showMessage("Notes saved successfully!", "success");
+            deactivateEditor();
+        });
+        
+        // Cancel editing
+        cancelBtn.addEventListener('click', function() {
+            window.cancelClicked = true;
+            showMessage("Changes discarded. Editor locked.", "error");
+            deactivateEditor();
+        });
+        
+        // Add new note
+        addNoteBtn.addEventListener('click', function() {
+            const noteItems = document.querySelectorAll('.note-item');
+            const newId = noteItems.length + 1;
+            
+            const newNote = document.createElement('div');
+            newNote.className = 'note-item';
+            newNote.setAttribute('data-note-id', newId);
+            newNote.innerHTML = `
+                <div class="note-title" contenteditable="true">
+                    <span class="red-dot"></span> New Note Title
+                </div>
+                <div class="note-content" contenteditable="true">
+                    Enter your note content here...
+                </div>
+                <div class="note-date" contenteditable="true">
+                    <i class="far fa-calendar"></i> ${new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
+                </div>
+            `;
+            
+            notesContainer.appendChild(newNote);
+            showMessage("New note added! You can edit it now.", "success");
+        });
+        
+        // Add binary code animation
+        function createBinary() {
+            const binaryChars = ['0', '1'];
+            const container = document.querySelector('.container');
+            
+            for (let i = 0; i < 15; i++) {
+                const binary = document.createElement('div');
+                binary.className = 'binary-code';
+                binary.textContent = Array(8).fill(0).map(() => binaryChars[Math.floor(Math.random() * 2)]).join('');
+                
+                // Random position
+                binary.style.left = Math.random() * 100 + '%';
+                binary.style.top = Math.random() * 100 + '%';
+                binary.style.opacity = Math.random() * 0.2 + 0.05;
+                binary.style.fontSize = (Math.random() * 0.8 + 0.8) + 'rem';
+                
+                // Random color (red or blue tint)
+                if (Math.random() > 0.5) {
+                    binary.style.color = 'rgba(255, 100, 100, 0.1)';
+                } else {
+                    binary.style.color = 'rgba(100, 150, 255, 0.1)';
+                }
+                
+                document.body.appendChild(binary);
+                
+                // Animate binary
+                animateBinary(binary);
+            }
+        }
+        
+        function animateBinary(element) {
+            let x = parseFloat(element.style.left);
+            let y = parseFloat(element.style.top);
+            let xDir = Math.random() > 0.5 ? 1 : -1;
+            let yDir = Math.random() > 0.5 ? 1 : -1;
+            
+            function move() {
+                x += xDir * 0.1;
+                y += yDir * 0.1;
+                
+                // Bounce off edges
+                if (x > 95 || x < 5) xDir *= -1;
+                if (y > 95 || y < 5) yDir *= -1;
+                
+                element.style.left = x + '%';
+                element.style.top = y + '%';
+                
+                // Occasionally change the binary values
+                if (Math.random() < 0.01) {
+                    const binaryChars = ['0', '1'];
+                    element.textContent = Array(8).fill(0).map(() => binaryChars[Math.floor(Math.random() * 2)]).join('');
+                }
+                
+                requestAnimationFrame(move);
+            }
+            
+            move();
+        }
+        
+        // Initialize animations
+        document.addEventListener('DOMContentLoaded', function() {
+            createBinary();
+            
+            // Add hover effect to cards
+            const cards = document.querySelectorAll('.card');
+            cards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.boxShadow = 
+                        '0 15px 35px rgba(0, 0, 0, 0.5), 0 0 30px rgba(255, 50, 50, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.boxShadow = '';
+                });
+            });
+            
+            // Add pulse animation to highlight elements
+            const highlights = document.querySelectorAll('.highlight');
+            highlights.forEach(highlight => {
+                highlight.addEventListener('mouseenter', function() {
+                    this.style.textShadow = '0 0 12px rgba(255, 50, 50, 0.8)';
+                });
+                
+                highlight.addEventListener('mouseleave', function() {
+                    this.style.textShadow = '0 0 8px rgba(255, 50, 50, 0.5)';
+                });
+            });
+            
+            // Check if there are saved notes in localStorage
+            const savedNotes = localStorage.getItem('savedNotes');
+            if (savedNotes) {
+                console.log("Saved notes found in browser storage");
+            }
+        });
+    </script>
+</body>
+</html>
