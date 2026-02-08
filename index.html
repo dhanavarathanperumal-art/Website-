@@ -598,9 +598,9 @@
             box-shadow: 0 5px 15px rgba(255, 50, 50, 0.3);
         }
         
-        /* Saved Section */
+        /* Saved Section - Single Item Layout */
         .saved-container::before {
-            content: "SAVED WEBSITES";
+            content: "SAVED WEBSITE";
             position: absolute;
             top: -10px;
             left: 15px;
@@ -614,80 +614,149 @@
             z-index: 2;
         }
         
-        .saved-links {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
+        .saved-single-item {
+            background: rgba(20, 30, 60, 0.6);
+            padding: 25px;
+            border-radius: 10px;
+            border-left: 4px solid #00ff88;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        
+        @media (max-width: 768px) {
+            .saved-single-item {
+                padding: 20px;
+            }
+        }
+        
+        .saved-single-item:hover {
+            background: rgba(30, 50, 90, 0.6);
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0, 255, 136, 0.2);
+            border-left: 4px solid #ff3232;
+        }
+        
+        .saved-single-icon {
+            font-size: 3rem;
+            color: #00ff88;
+            margin-bottom: 15px;
+            width: 80px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0, 255, 136, 0.1);
+            border-radius: 50%;
+            border: 2px solid rgba(0, 255, 136, 0.3);
+        }
+        
+        @media (max-width: 768px) {
+            .saved-single-icon {
+                font-size: 2.5rem;
+                width: 70px;
+                height: 70px;
+            }
+        }
+        
+        .saved-single-title {
+            font-weight: 700;
+            color: #00ff88;
+            margin-bottom: 10px;
+            font-size: 1.5rem;
+        }
+        
+        @media (max-width: 768px) {
+            .saved-single-title {
+                font-size: 1.3rem;
+            }
+        }
+        
+        .saved-single-desc {
+            color: #c0d0ff;
+            margin-bottom: 20px;
+            font-size: 1rem;
+            max-width: 800px;
+            line-height: 1.7;
+        }
+        
+        @media (max-width: 768px) {
+            .saved-single-desc {
+                font-size: 0.95rem;
+            }
+        }
+        
+        .saved-single-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            color: #00ff88;
+            text-decoration: none;
+            padding: 12px 25px;
+            background: rgba(0, 255, 136, 0.1);
+            border-radius: 8px;
+            border: 2px solid rgba(0, 255, 136, 0.3);
+            transition: all 0.3s ease;
+            font-weight: 600;
+            font-size: 1rem;
             margin-top: 10px;
         }
         
         @media (max-width: 768px) {
-            .saved-links {
-                grid-template-columns: 1fr;
+            .saved-single-link {
+                padding: 10px 20px;
+                font-size: 0.95rem;
             }
         }
         
-        .saved-item {
-            background: rgba(20, 30, 60, 0.6);
-            padding: 20px;
-            border-radius: 8px;
-            border-left: 3px solid #00ff88;
-            transition: all 0.3s ease;
-            display: flex;
-            flex-direction: column;
-            height: 100%;
-        }
-        
-        .saved-item:hover {
-            background: rgba(30, 50, 90, 0.6);
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 255, 136, 0.2);
-            border-left: 3px solid #ff3232;
-        }
-        
-        .saved-icon {
-            font-size: 2rem;
-            color: #00ff88;
-            margin-bottom: 12px;
-            text-align: center;
-        }
-        
-        .saved-title {
-            font-weight: 700;
-            color: #00ff88;
-            margin-bottom: 8px;
-            font-size: 1.2rem;
-            text-align: center;
-        }
-        
-        .saved-desc {
-            color: #c0d0ff;
-            margin-bottom: 15px;
-            font-size: 0.9rem;
-            flex-grow: 1;
-        }
-        
-        .saved-link {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            color: #00ff88;
-            text-decoration: none;
-            padding: 10px 15px;
-            background: rgba(0, 255, 136, 0.1);
-            border-radius: 5px;
-            border: 1px solid rgba(0, 255, 136, 0.3);
-            transition: all 0.3s ease;
-            font-weight: 600;
-            font-size: 0.9rem;
-        }
-        
-        .saved-link:hover {
+        .saved-single-link:hover {
             background: rgba(0, 255, 136, 0.3);
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0, 255, 136, 0.3);
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 10px 20px rgba(0, 255, 136, 0.3);
             color: white;
+        }
+        
+        .saved-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 25px;
+            width: 100%;
+        }
+        
+        @media (max-width: 768px) {
+            .saved-features {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+        }
+        
+        .saved-feature {
+            background: rgba(30, 40, 70, 0.5);
+            padding: 15px;
+            border-radius: 8px;
+            border-top: 3px solid #00ff88;
+            text-align: center;
+        }
+        
+        .saved-feature i {
+            color: #00ff88;
+            font-size: 1.5rem;
+            margin-bottom: 8px;
+        }
+        
+        .saved-feature h4 {
+            color: #00ff88;
+            margin-bottom: 5px;
+            font-size: 1rem;
+        }
+        
+        .saved-feature p {
+            color: #c0d0ff;
+            font-size: 0.85rem;
         }
         
         .edit-notice {
@@ -791,17 +860,23 @@
                 margin-bottom: 5px;
             }
             
-            .playlist-link, .saved-link {
+            .playlist-link, .saved-single-link {
                 font-size: 0.85rem;
                 padding: 8px 12px;
             }
             
-            .note-item, .saved-item {
+            .note-item {
                 padding: 12px;
             }
             
-            .saved-icon {
-                font-size: 1.8rem;
+            .saved-single-icon {
+                font-size: 2rem;
+                width: 60px;
+                height: 60px;
+            }
+            
+            .saved-single-title {
+                font-size: 1.2rem;
             }
         }
         
@@ -821,6 +896,12 @@
             
             .avatar i {
                 font-size: 1.8rem;
+            }
+            
+            .saved-single-icon {
+                font-size: 1.8rem;
+                width: 50px;
+                height: 50px;
             }
         }
         
@@ -1109,39 +1190,48 @@
             </div>
             
             <div class="card saved-section">
-                <h2><i class="fas fa-bookmark"></i> Saved Websites</h2>
+                <h2><i class="fas fa-bookmark"></i> Saved Website</h2>
                 
                 <div class="saved-container">
-                    <div class="saved-links">
-                        <div class="saved-item">
-                            <div class="saved-icon">
-                                <i class="fas fa-envelope"></i>
-                            </div>
-                            <div class="saved-title">Temp-Mail.org</div>
-                            <div class="saved-desc">
-                                A temporary email service that provides disposable email addresses. Perfect for signing up for services without using your personal email. Keeps your inbox clean and protects your privacy.
-                            </div>
-                            <a href="https://temp-mail.org/en/" target="_blank" class="saved-link">
-                                <i class="fas fa-external-link-alt"></i> Visit Temp-Mail.org
-                            </a>
+                    <div class="saved-single-item">
+                        <div class="saved-single-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="saved-single-title">Temp-Mail.org</div>
+                        <div class="saved-single-desc">
+                            A temporary email service that provides disposable email addresses. Perfect for signing up for services without using your personal email. Keeps your inbox clean and protects your privacy. Temp-Mail provides temporary, secure, anonymous, free, disposable email addresses. You can use it to avoid spam and protect your personal email.
                         </div>
                         
-                        <div class="saved-item">
-                            <div class="saved-icon">
-                                <i class="fas fa-download"></i>
+                        <a href="https://temp-mail.org/en/" target="_blank" class="saved-single-link">
+                            <i class="fas fa-external-link-alt"></i> Visit Temp-Mail.org
+                        </a>
+                        
+                        <div class="saved-features">
+                            <div class="saved-feature">
+                                <i class="fas fa-shield-alt"></i>
+                                <h4>Privacy Protection</h4>
+                                <p>Keep your personal email safe and anonymous</p>
                             </div>
-                            <div class="saved-title">GetIntoPC.com</div>
-                            <div class="saved-desc">
-                                A reliable source for free software downloads. Offers a wide range of applications, games, and tools for Windows. All downloads are tested and safe to use.
+                            <div class="saved-feature">
+                                <i class="fas fa-trash-alt"></i>
+                                <h4>Disposable</h4>
+                                <p>Temporary emails that auto-delete</p>
                             </div>
-                            <a href="https://getintopc.com/" target="_blank" class="saved-link">
-                                <i class="fas fa-external-link-alt"></i> Visit GetIntoPC.com
-                            </a>
+                            <div class="saved-feature">
+                                <i class="fas fa-inbox"></i>
+                                <h4>Spam-Free</h4>
+                                <p>Avoid unwanted emails and newsletters</p>
+                            </div>
+                            <div class="saved-feature">
+                                <i class="fas fa-bolt"></i>
+                                <h4>Quick Setup</h4>
+                                <p>Instant temporary email in seconds</p>
+                            </div>
                         </div>
                     </div>
                     
                     <div class="edit-notice" style="margin-top: 20px;">
-                        <p><strong><span class="red-dot"></span> Saved Websites:</strong> These are my frequently used websites. Click on any link to visit the site directly in a new tab.</p>
+                        <p><strong><span class="red-dot"></span> Saved Website:</strong> This is my frequently used website for temporary email needs. Click the link to visit the site directly in a new tab.</p>
                     </div>
                 </div>
             </div>
@@ -1152,7 +1242,7 @@
             <p><span class="highlight">Imperfect but trying</span> <span class="emoji">😅</span></p>
             <div style="margin-top: 10px; font-size: 0.8rem; color: #88aaff; display: flex; justify-content: center; flex-wrap: wrap; gap: 15px;">
                 <span><i class="fab fa-youtube" style="color: #ff0000;"></i> YouTube Playlist</span>
-                <span><i class="fas fa-bookmark" style="color: #00ff88;"></i> Saved Websites</span>
+                <span><i class="fas fa-envelope" style="color: #00ff88;"></i> Temp-Mail.org</span>
                 <span><i class="fas fa-mobile-alt" style="color: #00a2ff;"></i> Mobile Optimized</span>
                 <span><i class="fas fa-laptop" style="color: #ff3232;"></i> Desktop Ready</span>
             </div>
@@ -1252,7 +1342,7 @@
             });
             
             // Add touch feedback for mobile
-            const touchElements = document.querySelectorAll('.social-icon, .tech-tag, .playlist-link, .saved-link');
+            const touchElements = document.querySelectorAll('.social-icon, .tech-tag, .playlist-link, .saved-single-link');
             touchElements.forEach(element => {
                 element.addEventListener('touchstart', function() {
                     this.style.transform = 'scale(0.95)';
